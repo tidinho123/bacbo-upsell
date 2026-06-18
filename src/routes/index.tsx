@@ -185,13 +185,12 @@ function LandingPage() {
       <section className="relative py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <RevealOnScroll className="text-center space-y-4 mb-16">
-            <SectionLabel>Inclusos no acesso</SectionLabel>
+            <SectionLabel>Vantagens do Upgrade de Upsell</SectionLabel>
             <h2 className="font-display text-4xl md:text-6xl font-black">
-              <span className="text-gold-gradient">O que você recebe</span>
+              <span className="text-gold-gradient">Sua Conta com Bônus Máximo</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Um pacote completo desenhado para players que querem rapidez, segurança
-              e resultado.
+              Ao aceitar este upgrade especial de upsell, você adiciona um conjunto de vantagens de elite prontas para gerar resultados.
             </p>
           </RevealOnScroll>
 
