@@ -554,20 +554,19 @@ function LandingPage() {
               />
               <div className="relative grid md:grid-cols-2 gap-10 items-center">
                 <div className="space-y-4">
-                  <SectionLabel>Ticket único</SectionLabel>
-                  <h2 className="font-display text-5xl md:text-6xl font-black text-gold-gradient leading-none">
-                    {TICKET}
+                  <SectionLabel>🎁 BÔNUS DE UPSELL ATIVO</SectionLabel>
+                  <h2 className="font-display text-4xl md:text-5xl font-black text-gold-gradient leading-none">
+                    Oportunidade Especial de Upgrade
                   </h2>
                   <p className="text-muted-foreground">
-                    Depósito mínimo para ativar o Robô do Bac Bo com Moneytix.
-                    Bônus extra incluído. Sem mensalidades. Sem letras miúdas.
+                    Ative agora o Robô do Bac Bo com Moneytix como bônus exclusivo de upsell nesta sessão. Depósito mínimo simples de ativação, sem mensalidades.
                   </p>
                   <ul className="space-y-2 pt-2">
                     {[
-                      "Acesso imediato à plataforma",
-                      "Bônus inicial em KZ",
-                      "Suporte 24/7 em português",
-                      "Sem taxas escondidas",
+                      "Adiciona o Robô de Elite à sua conta",
+                      "Bônus de boas-vindas ativo na plataforma",
+                      "Suporte 24/7 dedicado em português",
+                      "Única chance de adquirir neste preço promocional",
                     ].map((x) => (
                       <li key={x} className="flex items-center gap-3 text-sm">
                         <span className="h-5 w-5 rounded-full bg-gold-gradient text-emerald-deep grid place-items-center text-[10px] font-black">
@@ -581,23 +580,25 @@ function LandingPage() {
                 <div className="text-center md:text-right space-y-4">
                   <div className="inline-block rounded-2xl border border-gold p-6 bg-background/50 backdrop-blur">
                     <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-                      A partir de
+                      Upgrade Único
                     </div>
                     <div className="font-display text-5xl text-gold-gradient font-black">
                       {TICKET}
                     </div>
                     <div className="text-xs text-muted-foreground mt-1">
-                      pagamento único
+                      bônus de upsell liberado
                     </div>
                   </div>
                   <div>
-                    <Cta large>ATIVAR AGORA · {TICKET}</Cta>
+                    <Cta large>SIM! ADICIONAR UPGRADE · {TICKET}</Cta>
                   </div>
                   <div className="text-[11px] text-muted-foreground">
-                    🔒 Pagamento seguro · ⚡ Liberação instantânea
+                    🔒 Pagamento 100% Seguro · ⚡ Liberação Imediata na Plataforma
                   </div>
                 </div>
               </div>
+            </div>
+          </RevealOnScroll>
             </div>
           </RevealOnScroll>
         </div>
