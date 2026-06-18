@@ -599,8 +599,6 @@ function LandingPage() {
               </div>
             </div>
           </RevealOnScroll>
-            </div>
-          </RevealOnScroll>
         </div>
       </section>
 
