@@ -9,14 +9,14 @@ const TICKET = "8.500 KZ";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Robô do Bac Bo — Moneytix | Acesso Premium" },
+      { title: "BÔNUS EXCLUSIVO DE UPSELL | Robô do Bac Bo — Moneytix" },
       {
         name: "description",
         content:
-          "Ative o Robô do Bac Bo com Moneytix. Acesso desbloqueado hoje a partir de 8.500 KZ. Bônus extra incluído.",
+          "Ative o Robô do Bac Bo com Moneytix como bônus especial de upsell. Acesso desbloqueado hoje a partir de 8.500 KZ.",
       },
-      { property: "og:title", content: "Robô do Bac Bo — Moneytix" },
-      { property: "og:description", content: "Acesso premium ao Robô do Bac Bo. A partir de 8.500 KZ." },
+      { property: "og:title", content: "Bônus de Upsell - Robô do Bac Bo — Moneytix" },
+      { property: "og:description", content: "Upgrade exclusivo com bônus de upsell. A partir de 8.500 KZ." },
       { property: "og:type", content: "website" },
       { property: "og:image", content: heroAsset.url },
     ],
@@ -65,26 +65,31 @@ function LandingPage() {
 
   return (
     <main className="overflow-x-hidden">
+      {/* UPSELL TOP ALERT BAR */}
+      <div className="bg-gold-gradient text-emerald-deep py-2 px-4 text-center text-xs font-black tracking-wider uppercase relative z-50">
+        🔥 OPORTUNIDADE DE UPGRADE EXCLUSIVO: ATIVE O ROBÔ BAC BO COMO BÔNUS DE UPSELL!
+      </div>
+
       {/* TOP BAR */}
-      <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/60 border-b border-gold/30">
+      <header className="fixed top-8 inset-x-0 z-50 backdrop-blur-md bg-background/60 border-b border-gold/30">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-8 py-3">
           <div className="flex items-center gap-2">
             <div className="h-8 w-8 rounded-full bg-gold-gradient grid place-items-center text-emerald-deep font-black">
               M
             </div>
-            <span className="font-display text-lg tracking-wide text-gold-gradient">MONEYTIX</span>
+            <span className="font-display text-lg tracking-wide text-gold-gradient">MONEYTIX UPSELL</span>
           </div>
           <div className="hidden md:flex items-center gap-6 text-xs uppercase tracking-[0.25em] text-muted-foreground">
+            <span className="text-primary font-bold">🎁 BÔNUS EXCLUSIVO</span>
             <span>Lookbook</span>
-            <span>Bac Bo</span>
-            <span>Premium</span>
+            <span>Premium Upgrade</span>
           </div>
-          <Cta>💰 {TICKET}</Cta>
+          <Cta>💰 ATIVAR UPSELL: {TICKET}</Cta>
         </div>
       </header>
 
       {/* ============ SECTION 1: HERO ============ */}
-      <section className="relative min-h-screen pt-20 pb-10 flex items-center">
+      <section className="relative min-h-screen pt-28 pb-10 flex items-center">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -112,12 +117,12 @@ function LandingPage() {
                   <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-primary" />
                 </span>
                 <span className="text-xs font-bold tracking-wider text-foreground">
-                  15K+ JOGADORES ATIVOS
+                  🔥 OFERTA DE UPGRADE DE UPSELL
                 </span>
               </div>
               <div className="absolute bottom-5 right-5 rounded-xl bg-background/80 backdrop-blur border border-gold px-4 py-2 text-xs">
-                <span className="text-muted-foreground">EDIÇÃO</span>{" "}
-                <span className="text-gold-gradient font-bold">N°01 · MMXXVI</span>
+                <span className="text-muted-foreground">BÔNUS ADICIONAL</span>{" "}
+                <span className="text-gold-gradient font-bold">UPGRADE DE CONTA</span>
               </div>
             </div>
           </div>
@@ -125,24 +130,22 @@ function LandingPage() {
           {/* TEXT 40% */}
           <div className="md:col-span-2 space-y-6 animate-fade-up">
             <span className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.25em] bg-emerald-deep border border-primary/40 text-primary">
-              🔓 Acesso Desbloqueado Hoje
+              🎁 BÔNUS DE UPGRADE DE UPSELL ATIVO
             </span>
             <h1 className="font-display font-black leading-[0.95] text-5xl md:text-7xl">
-              <span className="text-gold-gradient">ROBÔ DO</span>
+              <span className="text-gold-gradient">SÓ MAIS</span>
               <br />
-              <span className="text-gold-gradient">BAC BO!</span>
+              <span className="text-gold-gradient">UM PASSO!</span>
             </h1>
             <p className="text-lg md:text-xl text-foreground/90 font-light leading-snug">
-              <span className="font-semibold text-gold-gradient">Moneytix</span> já está
-              disponível para você.
+              Adicione o <span className="font-semibold text-gold-gradient">Robô do Bac Bo</span> com esta oferta de upsell e multiplique seus bônus por apenas <span className="font-bold text-gold-gradient">{TICKET}</span>.
             </p>
             <p className="text-muted-foreground text-sm md:text-base max-w-md">
-              Junte-se à comunidade global de jogadores que opera com o robô mais
-              comentado do ano. Tecnologia, estratégia e luxo no mesmo clique.
+              Aproveite esta condição única e exclusiva de upgrade. Esta oportunidade só aparece uma vez para adicionar o robô mais cobiçado diretamente à sua conta.
             </p>
             <div className="flex flex-col gap-3 pt-2">
               <Cta large>
-                ATIVAR ACESSO AGORA
+                ADICIONAR UPSELL DE BÔNUS
                 <span className="h-5 w-px bg-emerald-deep/40" />
                 💰 {TICKET}
               </Cta>
