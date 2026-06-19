@@ -4,6 +4,7 @@ import heroAsset from "@/assets/hero-bacbo.png.asset.json";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 
 const CTA_URL = "https://pay.kursinha.com/c/6a2849f2f9a33e8339b0eda5";
+const DOWNSELL_URL = "https://ofertaavitor.netlify.app";
 const TICKET = "8.500 KZ";
 
 export const Route = createFileRoute("/")({
@@ -594,6 +595,14 @@ function LandingPage() {
                   </div>
                   <div className="text-[11px] text-muted-foreground">
                     🔒 Pagamento 100% Seguro · ⚡ Liberação Imediata na Plataforma
+                  </div>
+                  <div className="pt-2">
+                    <a
+                      href={DOWNSELL_URL}
+                      className="inline-block text-xs md:text-sm text-muted-foreground/80 underline underline-offset-4 hover:text-gold transition-colors"
+                    >
+                      Não, obrigado — prefiro recusar este bônus exclusivo
+                    </a>
                   </div>
                 </div>
               </div>
