@@ -596,6 +596,14 @@ function LandingPage() {
                   <div className="text-[11px] text-muted-foreground">
                     🔒 Pagamento 100% Seguro · ⚡ Liberação Imediata na Plataforma
                   </div>
+                  <div className="pt-2">
+                    <a
+                      href={DOWNSELL_URL}
+                      className="inline-block text-xs md:text-sm text-muted-foreground/80 underline underline-offset-4 hover:text-gold transition-colors"
+                    >
+                      Não, obrigado — prefiro recusar este bônus exclusivo
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
