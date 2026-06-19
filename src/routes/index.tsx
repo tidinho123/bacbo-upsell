@@ -56,7 +56,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
-function LandingPage() {
+export function LandingPage() {
   const [scrollY, setScrollY] = useState(0);
   useEffect(() => {
     const onScroll = () => setScrollY(window.scrollY);
