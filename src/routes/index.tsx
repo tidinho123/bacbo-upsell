@@ -150,9 +150,17 @@ export function LandingPage() {
                 <span className="h-5 w-px bg-emerald-deep/40" />
                 💰 {TICKET}
               </Cta>
-              <span className="text-xs text-muted-foreground pl-2">
-                ✨ Bônus extra incluído · Aprovação instantânea
-              </span>
+              <div className="flex flex-col gap-2 pl-2">
+                <span className="text-xs text-muted-foreground">
+                  ✨ Bônus extra incluído · Aprovação instantânea
+                </span>
+                <a
+                  href={DOWNSELL_URL}
+                  className="text-xs text-muted-foreground/80 underline underline-offset-4 hover:text-gold transition-colors font-medium self-start"
+                >
+                  Não, obrigado — prefiro recusar este bônus exclusivo
+                </a>
+              </div>
             </div>
             <div className="flex items-center gap-6 pt-4 border-t border-gold/20">
               <div>
