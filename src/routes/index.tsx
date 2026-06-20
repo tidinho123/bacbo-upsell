@@ -692,11 +692,17 @@ export function LandingPage() {
               tempo limitado a partir de{" "}
               <span className="font-bold text-gold-gradient">{TICKET}</span>.
             </p>
-            <div className="flex justify-center pt-4">
+            <div className="flex flex-col items-center gap-3 pt-4">
               <Cta large>🚀 ATIVAR ACESSO · {TICKET}</Cta>
-            </div>
-            <div className="text-xs text-muted-foreground">
-              ✨ Bônus extra incluído · 🔒 Pagamento seguro · ⚡ Liberação instantânea
+              <span className="text-xs text-muted-foreground">
+                ✨ Bônus extra incluído · 🔒 Pagamento seguro · ⚡ Liberação instantânea
+              </span>
+              <a
+                href={DOWNSELL_URL}
+                className="text-xs md:text-sm text-muted-foreground/80 underline underline-offset-4 hover:text-gold transition-colors font-medium mt-1"
+              >
+                Não, obrigado — prefiro recusar este bônus exclusivo e prosseguir
+              </a>
             </div>
           </RevealOnScroll>
         </div>
