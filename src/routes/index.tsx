@@ -4,7 +4,7 @@ import heroAsset from "@/assets/hero-bacbo.png.asset.json";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 
 const CTA_URL = "https://pay.kursinha.com/c/6a2849f2f9a33e8339b0eda5";
-const DOWNSELL_URL = "https://ofertaavitor.netlify.app";
+const DOWNSELL_URL = "https://6a35da74d7bc6c0008ad78fe--bonusavitor.netlify.app";
 const TICKET = "8.500 KZ";
 
 export const Route = createFileRoute("/")({
