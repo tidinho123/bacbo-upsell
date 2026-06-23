@@ -1,25 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import heroAsset from "@/assets/hero-bacbo.png.asset.json";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 
-const CTA_URL = "https://pay.kursinha.com/c/6a2849f2f9a33e8339b0eda5";
-const DOWNSELL_URL = "https://6a35da74d7bc6c0008ad78fe--bonusavitor.netlify.app";
-const TICKET = "8.500 KZ";
+const CTA_URL = "LINK_DE_PAGAMENTO_AQUI";
+const DOWNSELL_URL = "LINK_DOWNSELL_AQUI";
+const TICKET = "X.XXX KZ";
+const PRODUTO = "botQuotex";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "BÔNUS EXCLUSIVO DE UPSELL | Robô do Bac Bo — Moneytix" },
+      { title: `BÔNUS EXCLUSIVO | ${PRODUTO} — Moneytix` },
       {
         name: "description",
-        content:
-          "Ative o Robô do Bac Bo com Moneytix como bônus especial de upsell. Acesso desbloqueado hoje a partir de 8.500 KZ.",
+        content: `Ative o ${PRODUTO} com Moneytix como bônus especial de upsell. Acesso desbloqueado hoje.`,
       },
-      { property: "og:title", content: "Bônus de Upsell - Robô do Bac Bo — Moneytix" },
-      { property: "og:description", content: "Upgrade exclusivo com bônus de upsell. A partir de 8.500 KZ." },
+      { property: "og:title", content: `Bônus de Upsell - ${PRODUTO} — Moneytix` },
+      { property: "og:description", content: `Upgrade exclusivo com ${PRODUTO}. Acesso imediato.` },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: heroAsset.url },
     ],
     links: [
       { rel: "canonical", href: "/" },
@@ -66,119 +64,114 @@ export function LandingPage() {
 
   return (
     <main className="overflow-x-hidden">
-      {/* UPSELL TOP ALERT BAR */}
+      {/* ALERTA TOPO */}
       <div className="bg-gold-gradient text-emerald-deep py-2 px-4 text-center text-xs font-black tracking-wider uppercase relative z-50">
-        🔥 OPORTUNIDADE DE UPGRADE EXCLUSIVO: ATIVE O ROBÔ BAC BO COMO BÔNUS DE UPSELL!
+        🔥 OPORTUNIDADE EXCLUSIVA: ATIVE O {PRODUTO.toUpperCase()} AGORA!
       </div>
 
-      {/* TOP BAR */}
+      {/* HEADER */}
       <header className="fixed top-8 inset-x-0 z-50 backdrop-blur-md bg-background/60 border-b border-gold/30">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-8 py-3">
           <div className="flex items-center gap-2">
             <div className="h-8 w-8 rounded-full bg-gold-gradient grid place-items-center text-emerald-deep font-black">
               M
             </div>
-            <span className="font-display text-lg tracking-wide text-gold-gradient">MONEYTIX UPSELL</span>
+            <span className="font-display text-lg tracking-wide text-gold-gradient">MONEYTIX</span>
           </div>
           <div className="hidden md:flex items-center gap-6 text-xs uppercase tracking-[0.25em] text-muted-foreground">
-            <span className="text-primary font-bold">🎁 BÔNUS EXCLUSIVO</span>
-            <span>Lookbook</span>
-            <span>Premium Upgrade</span>
+            <span className="text-primary font-bold">🤖 {PRODUTO}</span>
+            <span>Quotex</span>
+            <span>Premium</span>
           </div>
-          <Cta>💰 ATIVAR UPSELL: {TICKET}</Cta>
+          <Cta>🤖 ATIVAR: {TICKET}</Cta>
         </div>
       </header>
 
-      {/* ============ SECTION 1: HERO ============ */}
+      {/* ===== SECÇÃO 1: HERO ===== */}
       <section className="relative min-h-screen pt-28 pb-10 flex items-center">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse at 30% 40%, oklch(0.45 0.13 160 / 0.35), transparent 60%), radial-gradient(circle at 80% 20%, oklch(0.82 0.16 85 / 0.18), transparent 60%)",
+              "radial-gradient(ellipse at 30% 40%, oklch(0.35 0.18 250 / 0.35), transparent 60%), radial-gradient(circle at 80% 20%, oklch(0.82 0.16 85 / 0.18), transparent 60%)",
           }}
         />
         <div className="relative max-w-7xl mx-auto px-4 md:px-8 grid md:grid-cols-5 gap-8 items-center w-full">
-          {/* IMAGE 60% */}
+          {/* VISUAL */}
           <div className="md:col-span-3 relative">
             <div
-              className="relative rounded-3xl overflow-hidden border border-gold shadow-luxe"
+              className="relative rounded-3xl overflow-hidden border border-gold shadow-luxe aspect-[4/3] bg-gradient-to-br from-blue-900/60 to-background flex items-center justify-center"
               style={{ transform: `translateY(${scrollY * -0.05}px)` }}
             >
-              <img
-                src={heroAsset.url}
-                alt="Robô do Bac Bo — Moneytix"
-                className="w-full h-auto block"
-              />
+              <div className="text-[14rem] opacity-80 animate-float select-none">🤖</div>
               <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
-              {/* Badge */}
               <div className="absolute top-5 left-5 inline-flex items-center gap-2 rounded-full bg-background/80 backdrop-blur px-4 py-2 border border-gold">
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
                   <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-primary" />
                 </span>
                 <span className="text-xs font-bold tracking-wider text-foreground">
-                  🔥 OFERTA DE UPGRADE DE UPSELL
+                  🔴 AO VIVO NA QUOTEX
                 </span>
               </div>
               <div className="absolute bottom-5 right-5 rounded-xl bg-background/80 backdrop-blur border border-gold px-4 py-2 text-xs">
-                <span className="text-muted-foreground">BÔNUS ADICIONAL</span>{" "}
-                <span className="text-gold-gradient font-bold">UPGRADE DE CONTA</span>
+                <span className="text-muted-foreground">OPERANDO</span>{" "}
+                <span className="text-gold-gradient font-bold">24/7 AUTOMÁTICO</span>
               </div>
             </div>
           </div>
 
-          {/* TEXT 40% */}
+          {/* TEXTO */}
           <div className="md:col-span-2 space-y-6 animate-fade-up">
             <span className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.25em] bg-emerald-deep border border-primary/40 text-primary">
-              🎁 BÔNUS DE UPGRADE DE UPSELL ATIVO
+              🤖 {PRODUTO} — ACESSO EXCLUSIVO
             </span>
             <h1 className="font-display font-black leading-[0.95] text-5xl md:text-7xl">
-              <span className="text-gold-gradient">SÓ MAIS</span>
+              <span className="text-gold-gradient">O ROBÔ QUE</span>
               <br />
-              <span className="text-gold-gradient">UM PASSO!</span>
+              <span className="text-gold-gradient">OPERA POR TI</span>
             </h1>
             <p className="text-lg md:text-xl text-foreground/90 font-light leading-snug">
-              Adicione o <span className="font-semibold text-gold-gradient">Robô do Bac Bo</span> com esta oferta de upsell e multiplique seus bônus por apenas <span className="font-bold text-gold-gradient">{TICKET}</span>.
+              O <span className="font-semibold text-gold-gradient">{PRODUTO}</span> opera automaticamente na Quotex enquanto tu descansas. Ativo <span className="font-bold text-gold-gradient">24 horas por dia</span>.
             </p>
             <p className="text-muted-foreground text-sm md:text-base max-w-md">
-              Aproveite esta condição única e exclusiva de upgrade. Esta oportunidade só aparece uma vez para adicionar o robô mais cobiçado diretamente à sua conta.
+              Sem precisar de experiência, sem complicação. O bot analisa o mercado e faz as operações por ti de forma automática.
             </p>
             <div className="flex flex-col gap-3 pt-2">
               <Cta large>
-                ADICIONAR UPSELL DE BÔNUS
+                🤖 ATIVAR {PRODUTO.toUpperCase()}
                 <span className="h-5 w-px bg-emerald-deep/40" />
                 💰 {TICKET}
               </Cta>
               <div className="flex flex-col gap-2 pl-2">
                 <span className="text-xs text-muted-foreground">
-                  ✨ Bônus extra incluído · Aprovação instantânea
+                  ✨ Ativação imediata · Suporte incluído
                 </span>
                 <a
                   href={DOWNSELL_URL}
                   className="text-xs text-muted-foreground/80 underline underline-offset-4 hover:text-gold transition-colors font-medium self-start"
                 >
-                  Não, obrigado — prefiro recusar este bônus exclusivo
+                  Não, obrigado — prefiro continuar sem o bot
                 </a>
               </div>
             </div>
             <div className="flex items-center gap-6 pt-4 border-t border-gold/20">
               <div>
-                <div className="text-2xl font-display text-gold-gradient">98%</div>
+                <div className="text-2xl font-display text-gold-gradient">100%</div>
                 <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
-                  Aprovação
+                  Automático
                 </div>
               </div>
               <div>
                 <div className="text-2xl font-display text-gold-gradient">24/7</div>
                 <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
-                  Suporte PT
+                  Ativo
                 </div>
               </div>
               <div>
                 <div className="text-2xl font-display text-gold-gradient">2 min</div>
                 <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
-                  Cadastro
+                  Para ativar
                 </div>
               </div>
             </div>
@@ -190,46 +183,46 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* ============ SECTION 2: O QUE VOCÊ RECEBE ============ */}
+      {/* ===== SECÇÃO 2: O QUE RECEBES ===== */}
       <section className="relative py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <RevealOnScroll className="text-center space-y-4 mb-16">
-            <SectionLabel>Vantagens do Upgrade de Upsell</SectionLabel>
+            <SectionLabel>O que recebes</SectionLabel>
             <h2 className="font-display text-4xl md:text-6xl font-black">
-              <span className="text-gold-gradient">Sua Conta com Bônus Máximo</span>
+              <span className="text-gold-gradient">Tudo incluído no {PRODUTO}</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Ao aceitar este upgrade especial de upsell, você adiciona um conjunto de vantagens de elite prontas para gerar resultados.
+              Ao ativar o {PRODUTO} tens acesso imediato a um sistema completo de operações automáticas na Quotex.
             </p>
           </RevealOnScroll>
 
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             {[
               {
-                icon: "🎰",
-                title: "Acesso Imediato",
-                desc: "Entre na plataforma em menos de 2 minutos.",
-                tone: "from-sky-500/15 to-transparent",
-                ring: "ring-sky-400/30",
+                icon: "🤖",
+                title: "Bot 100% Automático",
+                desc: "Opera sozinho na Quotex. Não precisas de fazer nada manualmente.",
+                tone: "from-blue-500/15 to-transparent",
+                ring: "ring-blue-400/30",
               },
               {
-                icon: "💰",
-                title: "Bônus de Boas-vindas",
-                desc: `Depósito mínimo ${TICKET} + bônus inicial em KZ.`,
+                icon: "📊",
+                title: "Análise em Tempo Real",
+                desc: "O bot analisa o mercado a cada segundo e entra na melhor oportunidade.",
                 tone: "from-amber-400/15 to-transparent",
                 ring: "ring-amber-300/30",
               },
               {
                 icon: "🛡️",
-                title: "100% Seguro & Certificado",
-                desc: "Plataforma segura com suporte 24/7 em português.",
+                title: "Gestão de Risco Incluída",
+                desc: "Sistema automático de proteção do teu saldo. Controla as perdas sozinho.",
                 tone: "from-emerald-500/15 to-transparent",
                 ring: "ring-emerald-300/30",
               },
               {
                 icon: "📱",
-                title: "Mobile Premium",
-                desc: "Jogue Bac Bo em qualquer lugar, qualquer hora.",
+                title: "Funciona no Telemóvel",
+                desc: "Acompanha as operações do teu bot em qualquer lugar, pelo telemóvel.",
                 tone: "from-rose-500/15 to-transparent",
                 ring: "ring-rose-300/30",
               },
@@ -255,7 +248,7 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* ============ SECTION 3: COMO FUNCIONA — TIMELINE ============ */}
+      {/* ===== SECÇÃO 3: COMO FUNCIONA ===== */}
       <section className="relative py-24 md:py-32 bg-emerald-deep/40">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
           <RevealOnScroll className="text-center space-y-4 mb-20">
@@ -272,34 +265,26 @@ export function LandingPage() {
               {
                 num: "①",
                 side: "left",
-                title: "CADASTRO RÁPIDO",
-                lines: ["Email + WhatsApp (apenas 2 campos)", "Sem documentos complicados"],
-                time: "⏱️ 1 minuto",
-                emoji: "📝",
+                title: "ATIVA O BOT",
+                lines: ["Clica no botão abaixo", "Pagamento simples e seguro", "Ativação em 2 minutos"],
+                time: "⏱️ 2 minutos",
+                emoji: "🔑",
               },
               {
                 num: "②",
                 side: "right",
-                title: "DEPÓSITO MÍNIMO",
-                lines: [
-                  `Mínimo: ${TICKET}`,
-                  "PIX, Orange Money, Cartão",
-                  "+ BÔNUS INICIAL",
-                ],
-                time: "⏱️ 2-5 minutos",
-                emoji: "💳",
+                title: "CONECTA À QUOTEX",
+                lines: ["Segue o guia enviado por nós", "Liga o bot à tua conta Quotex", "Sem configurações complicadas"],
+                time: "⏱️ 5 minutos",
+                emoji: "🔗",
               },
               {
                 num: "③",
                 side: "left",
-                title: "COMECE A JOGAR",
-                lines: [
-                  "Acesso total ao Bac Bo",
-                  "Suporte ao vivo 24/7",
-                  "Comunidade global",
-                ],
-                time: "🎮 ao vivo",
-                emoji: "🎲",
+                title: "O BOT OPERA POR TI",
+                lines: ["Liga e esquece", "O bot trabalha 24/7", "Tu acompanhas os resultados"],
+                time: "🤖 automático",
+                emoji: "💰",
                 cta: true,
               },
             ].map((s, i) => (
@@ -310,11 +295,7 @@ export function LandingPage() {
                   }`}
                 >
                   <div className={`${s.side === "right" ? "md:text-left" : "md:text-right"}`}>
-                    <div
-                      className={`inline-block ${
-                        s.side === "right" ? "" : ""
-                      }`}
-                    >
+                    <div className="inline-block">
                       <div className="font-display text-6xl md:text-7xl text-gold-gradient animate-spin-slow inline-block">
                         {s.num}
                       </div>
@@ -334,7 +315,7 @@ export function LandingPage() {
                       </div>
                       {s.cta && (
                         <div className="mt-6">
-                          <Cta large>🎮 COMEÇAR AGORA · {TICKET}</Cta>
+                          <Cta large>🤖 ATIVAR AGORA · {TICKET}</Cta>
                         </div>
                       )}
                     </div>
@@ -353,17 +334,16 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* ============ SECTION 4: POR QUE BAC BO ============ */}
+      {/* ===== SECÇÃO 4: POR QUE QUOTEX ===== */}
       <section className="relative py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-4 md:px-8 space-y-28">
           <RevealOnScroll className="text-center space-y-4">
-            <SectionLabel>Editorial</SectionLabel>
+            <SectionLabel>A plataforma</SectionLabel>
             <h2 className="font-display text-4xl md:text-6xl font-black text-gold-gradient">
-              Por que Bac Bo?
+              Por que a Quotex?
             </h2>
           </RevealOnScroll>
 
-          {/* 4A */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <RevealOnScroll>
               <div className="relative rounded-3xl overflow-hidden border border-gold shadow-luxe aspect-[4/5]">
@@ -371,40 +351,35 @@ export function LandingPage() {
                   className="absolute inset-0"
                   style={{
                     background:
-                      "radial-gradient(circle at 30% 30%, oklch(0.45 0.13 160 / 0.8), oklch(0.15 0.04 155)), repeating-linear-gradient(45deg, oklch(0.82 0.16 85 / 0.08) 0 2px, transparent 2px 14px)",
+                      "radial-gradient(circle at 30% 30%, oklch(0.35 0.18 250 / 0.8), oklch(0.15 0.04 250)), repeating-linear-gradient(45deg, oklch(0.82 0.16 85 / 0.08) 0 2px, transparent 2px 14px)",
                   }}
                 />
                 <div className="absolute inset-0 grid place-items-center text-[16rem] opacity-90 animate-float">
-                  🎲
+                  📈
                 </div>
                 <div className="absolute bottom-6 left-6 right-6 backdrop-blur bg-background/60 border border-gold rounded-2xl p-4">
                   <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-                    Mesa Ao Vivo
+                    Plataforma
                   </div>
-                  <div className="font-display text-xl text-gold-gradient">Bac Bo Premium</div>
+                  <div className="font-display text-xl text-gold-gradient">Quotex — Operações Digitais</div>
                 </div>
               </div>
             </RevealOnScroll>
             <RevealOnScroll delay={150} className="space-y-6">
-              <span className="inline-block text-xs font-bold uppercase tracking-[0.3em] text-primary">
-                Desde 2015
-              </span>
               <h3 className="font-display text-4xl md:text-5xl font-black leading-tight">
-                Jogo clássico,
+                Plataforma simples,
                 <br />
-                <span className="text-gold-gradient">estratégia moderna.</span>
+                <span className="text-gold-gradient">resultados reais.</span>
               </h3>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Bac Bo é um dos clássicos mais populares da Ásia e agora está em
-                Angola. Operado pelo Robô da Moneytix, cada rodada vira uma jogada
-                calculada.
+                A Quotex é uma das plataformas de operações digitais mais usadas no mundo. Rápida, segura e perfeita para bots automáticos como o {PRODUTO}.
               </p>
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  "Regras simples",
-                  "Rodadas rápidas (1-2 min)",
-                  "Sem complicação técnica",
-                  "Chance de ganho real",
+                  "Interface simples",
+                  "Saques rápidos",
+                  "Suporte 24/7",
+                  "100% online",
                 ].map((b) => (
                   <div
                     key={b}
@@ -417,17 +392,15 @@ export function LandingPage() {
             </RevealOnScroll>
           </div>
 
-          {/* 4B */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <RevealOnScroll className="space-y-6 md:order-1 order-2">
               <h3 className="font-display text-4xl md:text-5xl font-black leading-tight">
-                Por que os players
+                Por que usar
                 <br />
-                <span className="text-gold-gradient">escolhem Bac Bo?</span>
+                <span className="text-gold-gradient">um bot automático?</span>
               </h3>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                A maioria dos jogadores experientes já tem conta ativa na plataforma
-                porque é confiável, rápida e fácil de usar.
+                O mercado não dorme. Com o {PRODUTO}, as tuas operações continuam mesmo quando estás a dormir, a trabalhar ou a descansar.
               </p>
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-3">
@@ -441,8 +414,8 @@ export function LandingPage() {
                   ))}
                 </div>
                 <div>
-                  <div className="text-sm font-bold">+15.000 players</div>
-                  <div className="text-xs text-muted-foreground">já ativaram este mês</div>
+                  <div className="text-sm font-bold">+10.000 utilizadores</div>
+                  <div className="text-xs text-muted-foreground">já usam bots na Quotex</div>
                 </div>
               </div>
             </RevealOnScroll>
@@ -450,15 +423,15 @@ export function LandingPage() {
             <RevealOnScroll delay={150} className="md:order-2 order-1">
               <div className="rounded-3xl border border-gold bg-card/40 backdrop-blur p-8 md:p-10 shadow-luxe">
                 <div className="text-[10px] uppercase tracking-[0.3em] text-primary mb-6">
-                  Checklist do player premium
+                  Vantagens do {PRODUTO}
                 </div>
                 <ul className="space-y-4">
                   {[
-                    "Regras claras",
-                    "Suporte português",
-                    "Comunidade ativa",
-                    "Pagamentos múltiplos",
-                    "24/7 online",
+                    "Opera 24 horas por dia",
+                    "Sem emoções, só lógica",
+                    "Gestão de risco automática",
+                    "Não precisas de experiência",
+                    "Resultados visíveis em dias",
                   ].map((c, i) => (
                     <RevealOnScroll key={c} delay={i * 100}>
                       <li className="flex items-center gap-4 border-b border-gold/20 pb-3">
@@ -479,21 +452,21 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* ============ SECTION 5: NÚMEROS + DEPOIMENTOS ============ */}
+      {/* ===== SECÇÃO 5: NÚMEROS + DEPOIMENTOS ===== */}
       <section className="relative py-24 md:py-32 bg-emerald-deep/40">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <RevealOnScroll className="text-center space-y-4 mb-16">
             <SectionLabel>Em números</SectionLabel>
             <h2 className="font-display text-4xl md:text-6xl font-black text-gold-gradient">
-              Social proof real
+              Resultados reais
             </h2>
           </RevealOnScroll>
 
           <div className="grid md:grid-cols-3 gap-6 mb-20">
             {[
-              { n: "15.420", l: "Players ativos", c: "from-emerald-500/20" },
-              { n: "98%", l: "Taxa de aprovação", c: "from-amber-400/20" },
-              { n: "24/7", l: "Suporte PT", c: "from-rose-500/20" },
+              { n: "10.000+", l: "Utilizadores ativos", c: "from-blue-500/20" },
+              { n: "97%", l: "Taxa de ativação", c: "from-amber-400/20" },
+              { n: "24/7", l: "Bot ativo", c: "from-emerald-500/20" },
             ].map((s, i) => (
               <RevealOnScroll key={s.l} delay={i * 120}>
                 <div
@@ -513,19 +486,19 @@ export function LandingPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                name: "Carlos M.",
+                name: "João M.",
                 role: "Luanda",
-                text: "Em 3 dias recuperei meu primeiro depósito. O suporte responde rápido e a interface é simples.",
+                text: "Em 3 dias o bot já estava a operar sozinho. Nunca pensei que fosse tão simples de ativar.",
               },
               {
-                name: "Aline R.",
+                name: "Ana R.",
                 role: "Benguela",
-                text: "Comecei com 8.500 KZ. O bônus inicial fez toda a diferença. Recomendo demais.",
+                text: "Ativei o botQuotex e agora só acompanho os resultados. O suporte ajudou-me em tudo.",
               },
               {
-                name: "Felipe O.",
+                name: "Pedro O.",
                 role: "Huambo",
-                text: "Levei 1 minuto pra cadastrar. O robô faz quase tudo, eu só acompanho.",
+                text: "O bot opera enquanto estou a trabalhar. É incrível ver as operações acontecer sozinhas.",
               },
             ].map((t, i) => (
               <RevealOnScroll key={t.name} delay={i * 150}>
@@ -549,7 +522,7 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* ============ SECTION 6: PRICING / TICKET ============ */}
+      {/* ===== SECÇÃO 6: PREÇO ===== */}
       <section className="relative py-24 md:py-32">
         <div className="max-w-5xl mx-auto px-4 md:px-8">
           <RevealOnScroll>
@@ -563,19 +536,19 @@ export function LandingPage() {
               />
               <div className="relative grid md:grid-cols-2 gap-10 items-center">
                 <div className="space-y-4">
-                  <SectionLabel>🎁 BÔNUS DE UPSELL ATIVO</SectionLabel>
+                  <SectionLabel>🤖 ACESSO AO {PRODUTO.toUpperCase()}</SectionLabel>
                   <h2 className="font-display text-4xl md:text-5xl font-black text-gold-gradient leading-none">
-                    Oportunidade Especial de Upgrade
+                    Ativa o teu bot hoje
                   </h2>
                   <p className="text-muted-foreground">
-                    Ative agora o Robô do Bac Bo com Moneytix como bônus exclusivo de upsell nesta sessão. Depósito mínimo simples de ativação, sem mensalidades.
+                    Um único pagamento. Sem mensalidades. O {PRODUTO} fica ativo na tua conta da Quotex imediatamente após a ativação.
                   </p>
                   <ul className="space-y-2 pt-2">
                     {[
-                      "Adiciona o Robô de Elite à sua conta",
-                      "Bônus de boas-vindas ativo na plataforma",
-                      "Suporte 24/7 dedicado em português",
-                      "Única chance de adquirir neste preço promocional",
+                      "Bot automático ligado à tua conta Quotex",
+                      "Gestão de risco incluída",
+                      "Suporte 24/7 em português",
+                      "Guia de ativação passo a passo",
                     ].map((x) => (
                       <li key={x} className="flex items-center gap-3 text-sm">
                         <span className="h-5 w-5 rounded-full bg-gold-gradient text-emerald-deep grid place-items-center text-[10px] font-black">
@@ -589,27 +562,27 @@ export function LandingPage() {
                 <div className="text-center md:text-right space-y-4">
                   <div className="inline-block rounded-2xl border border-gold p-6 bg-background/50 backdrop-blur">
                     <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-                      Upgrade Único
+                      Acesso único
                     </div>
                     <div className="font-display text-5xl text-gold-gradient font-black">
                       {TICKET}
                     </div>
                     <div className="text-xs text-muted-foreground mt-1">
-                      bônus de upsell liberado
+                      pagamento único · sem mensalidades
                     </div>
                   </div>
                   <div>
-                    <Cta large>SIM! ADICIONAR UPGRADE · {TICKET}</Cta>
+                    <Cta large>SIM! ATIVAR {PRODUTO.toUpperCase()} · {TICKET}</Cta>
                   </div>
                   <div className="text-[11px] text-muted-foreground">
-                    🔒 Pagamento 100% Seguro · ⚡ Liberação Imediata na Plataforma
+                    🔒 Pagamento 100% Seguro · ⚡ Ativação Imediata
                   </div>
                   <div className="pt-2">
                     <a
                       href={DOWNSELL_URL}
                       className="inline-block text-xs md:text-sm text-muted-foreground/80 underline underline-offset-4 hover:text-gold transition-colors"
                     >
-                      Não, obrigado — prefiro recusar este bônus exclusivo
+                      Não, obrigado — prefiro continuar sem o bot
                     </a>
                   </div>
                 </div>
@@ -619,37 +592,37 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* ============ SECTION 7: FAQ ============ */}
+      {/* ===== SECÇÃO 7: FAQ ===== */}
       <section className="relative py-24 md:py-32 bg-emerald-deep/40">
         <div className="max-w-4xl mx-auto px-4 md:px-8">
           <RevealOnScroll className="text-center space-y-4 mb-12">
             <SectionLabel>Perguntas Frequentes</SectionLabel>
             <h2 className="font-display text-4xl md:text-6xl font-black text-gold-gradient">
-              Tire suas dúvidas
+              Tire as tuas dúvidas
             </h2>
           </RevealOnScroll>
 
           <div className="space-y-4">
             {[
               {
-                q: "Qual o valor mínimo para começar?",
-                a: `O ticket mínimo é de ${TICKET}. Esse valor cai direto na sua conta da plataforma + bônus inicial.`,
+                q: `O que é o ${PRODUTO}?`,
+                a: `O ${PRODUTO} é um bot automático que opera na plataforma Quotex por ti. Ele analisa o mercado e faz as operações de forma automática, 24 horas por dia.`,
               },
               {
-                q: "Quanto tempo demora para liberar o acesso?",
-                a: "A liberação é instantânea após o pagamento. Em até 2 minutos você está dentro.",
+                q: "Preciso de experiência para usar?",
+                a: "Não. O bot faz tudo automaticamente. Tu apenas ativas e acompanhas os resultados. O nosso suporte ajuda-te em cada passo.",
               },
               {
-                q: "Funciona no celular?",
-                a: "Sim. A plataforma é 100% mobile e funciona em Android e iPhone, sem app, direto no navegador.",
+                q: "Quanto tempo demora a ativar?",
+                a: "A ativação demora menos de 5 minutos. Após o pagamento recebes um guia passo a passo para ligar o bot à tua conta Quotex.",
               },
               {
-                q: "Posso sacar quando quiser?",
-                a: "Sim. Você usa PIX, Orange Money ou Cartão e os saques são processados pela própria plataforma.",
+                q: "O bot opera 24 horas?",
+                a: "Sim. O bot opera continuamente, mesmo quando estás a dormir. Podes acompanhar as operações em tempo real pelo teu telemóvel.",
               },
               {
                 q: "Tem suporte em português?",
-                a: "24/7 em português, com atendimento humano e tempo médio de resposta inferior a 3 minutos.",
+                a: "Sim. Suporte 24/7 em português para te ajudar em tudo, desde a ativação até ao acompanhamento dos resultados.",
               },
             ].map((f, i) => (
               <RevealOnScroll key={f.q} delay={i * 80}>
@@ -670,52 +643,50 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* ============ SECTION 8: CTA FINAL ============ */}
+      {/* ===== SECÇÃO 8: CTA FINAL ===== */}
       <section className="relative py-28 md:py-40 overflow-hidden">
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse at center, oklch(0.30 0.10 160 / 0.6), transparent 60%), radial-gradient(circle at 80% 30%, oklch(0.82 0.16 85 / 0.25), transparent 50%)",
+              "radial-gradient(ellipse at center, oklch(0.25 0.15 250 / 0.6), transparent 60%), radial-gradient(circle at 80% 30%, oklch(0.82 0.16 85 / 0.25), transparent 50%)",
           }}
         />
         <div className="relative max-w-4xl mx-auto px-4 md:px-8 text-center space-y-8">
           <RevealOnScroll className="space-y-6">
             <SectionLabel>Última chamada</SectionLabel>
             <h2 className="font-display text-5xl md:text-7xl font-black leading-[0.95]">
-              <span className="text-gold-gradient">Hoje é o dia</span>
+              <span className="text-gold-gradient">O bot que trabalha</span>
               <br />
-              de virar a mesa.
+              enquanto tu descansas.
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Ative agora o Robô do Bac Bo com Moneytix. Acesso desbloqueado por
-              tempo limitado a partir de{" "}
-              <span className="font-bold text-gold-gradient">{TICKET}</span>.
+              Ativa agora o <span className="font-bold text-gold-gradient">{PRODUTO}</span> e começa a operar automaticamente na Quotex hoje mesmo.
             </p>
             <div className="flex flex-col items-center gap-3 pt-4">
-              <Cta large>🚀 ATIVAR ACESSO · {TICKET}</Cta>
+              <Cta large>🤖 ATIVAR {PRODUTO.toUpperCase()} · {TICKET}</Cta>
               <span className="text-xs text-muted-foreground">
-                ✨ Bônus extra incluído · 🔒 Pagamento seguro · ⚡ Liberação instantânea
+                ✨ Ativação imediata · 🔒 Pagamento seguro · 🤖 Bot ativo 24/7
               </span>
               <a
                 href={DOWNSELL_URL}
                 className="text-xs md:text-sm text-muted-foreground/80 underline underline-offset-4 hover:text-gold transition-colors font-medium mt-1"
               >
-                Não, obrigado — prefiro recusar este bônus exclusivo e prosseguir
+                Não, obrigado — prefiro continuar sem o bot
               </a>
             </div>
           </RevealOnScroll>
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* RODAPÉ */}
       <footer className="border-t border-gold/30 py-10 text-center">
         <div className="font-display text-2xl text-gold-gradient mb-2">MONEYTIX</div>
         <div className="text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Moneytix · Robô do Bac Bo · Acesso premium
+          © {new Date().getFullYear()} Moneytix · {PRODUTO} · Quotex
         </div>
         <div className="text-[10px] text-muted-foreground mt-2 max-w-xl mx-auto px-4">
-          Jogue com responsabilidade. Conteúdo destinado a maiores de 18 anos.
+          Opera com responsabilidade. Conteúdo destinado a maiores de 18 anos. Resultados não são garantidos.
         </div>
       </footer>
     </main>
