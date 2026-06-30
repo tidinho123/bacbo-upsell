@@ -1,0 +1,22 @@
+{
+  "name": "aviator-bot",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Bot de sinais do Aviator via Telegram",
+  "main": "dist/bot.js",
+  "scripts": {
+    "dev": "node --loader ts-node/esm src/bot.ts",
+    "start": "node dist/bot.js",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "telegraf": "^4.20.0",
+    "dotenv": "^16.4.5",
+    "axios": "^1.7.7"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "@types/node": "^22.16.5",
+    "ts-node": "^10.9.2"
+  }
+}
